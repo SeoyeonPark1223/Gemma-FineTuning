@@ -44,3 +44,38 @@
         - The model was trained for 5 epochs with a LoRA rank of 8, allowing the generator to build a more nuanced understanding of how slang terms fit within different conversation flows and contexts. This tuning significantly improved the model’s ability to generate context-aware slang, although some variability in accuracy was observed.
 	3. **3rd Attempt (Final Result)**:
         - In the final tuning attempt, the advanced dataset ( [all_slangs.csv](https://huggingface.co/datasets/SeoyeonPark1223/genz-slangs)) was once again employed, but this time the training process was extended to 10 epochs with the LoRA rank still set to 8. This longer training session allowed the model to better capture the intricate relationships between slang, their descriptions, and how they are used in various contexts. The result was a slang generator that not only understood GenZ terms but also could generate them in contextually appropriate and creative ways. This step achieved the final desired outcome for the project.
+
+- **Example Usage:**
+    1. Initial Setup
+        - To start generating slang terms, define a tag that outlines the instructions for the model:
+
+        ```python
+        tag = (
+            "Given the context below, create a new slang term. "
+            "The slang should be catchy, easy to use, and relevant to modern youth culture. "
+            "Make sure it's something that would feel natural in casual conversation:\n\n"
+        )
+        ```
+    2. Define Specific Context
+        - Set the context for the slang generation. For example:
+        ```python
+        context = "You're hanging out with friends at a new restaurant, trying out some unique fusion dishes."
+        ```
+
+    3. Define Conditions
+        - Specify additional conditions for the output. For example, you can request the definition and examples:
+        ```python
+        condition = "You should suggest new slang and its definition, also give an example for clarification. Example should be long and also precise."
+        ```
+
+    4. Final Prompt Construction
+        - Construct the final prompt by combining the tag, context, and condition:
+        ```python
+        prompt = template.format(
+            instruction=tag + context + condition,
+            response=""
+        )
+        ```
+
+- **Conclusion:**
+    - With this slang generator, you can easily create new and engaging slang terms tailored to various contexts. Feel free to modify the context and conditions to explore different slang outputs!
