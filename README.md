@@ -33,8 +33,14 @@
     - **Finetuned from model:** google/gemma2-2b
     - **Model type:** Causal Language Model (GemmaCausalLM)
     - **API used:** Keras 
-    - **Tuning Process:**
-        - 1st Attempt: Used small dataset (about 150 rows) with only `Slang`, `Description` columns. Trained only 1 epoch with LoRA rank 4. 
-        - 2nd Attempt: Used advanced dataset (`all_slangs.csv`) with additional `Example`, `Context` columns. Trained 5 epochs with LoRA rank 8.
-        - 3rd Attempt: Used advanced dataset. Trained 10 epochs with LoRA rank 8. -> Final Result
     - **HuggingFace:** [HuggingFace Model](https://huggingface.co/SeoyeonPark1223/genz-slang-generator)
+
+- **Model Training**
+    1. **1st Attempt:**
+        - The initial attempt involved a smaller dataset of approximately 150 rows, which included only two columns: Slang and Description. This simplified dataset was intended to give the model a basic understanding of popular GenZ slang and their corresponding meanings. 
+        - To minimize resource usage, the model was trained for just 1 epoch, and a LoRA (Low-Rank Adaptation) rank of 4 was applied. This setup provided an initial, but limited, baseline for how the slang generator might perform, but the lack of contextual and example-based training limited the depth of the generated output.
+	2. **2nd Attempt:**
+        - For the second round of tuning, a more comprehensive dataset, all_slangs.csv, was utilized. This dataset expanded the available information by adding Example and Context columns, providing the model not only with the slang definitions but also practical usage scenarios and conversational contexts. 
+        - The model was trained for 5 epochs with a LoRA rank of 8, allowing the generator to build a more nuanced understanding of how slang terms fit within different conversation flows and contexts. This tuning significantly improved the model’s ability to generate context-aware slang, although some variability in accuracy was observed.
+	3. **3rd Attempt (Final Result)**:
+        - In the final tuning attempt, the advanced dataset ( [all_slangs.csv](https://huggingface.co/datasets/SeoyeonPark1223/genz-slangs)) was once again employed, but this time the training process was extended to 10 epochs with the LoRA rank still set to 8. This longer training session allowed the model to better capture the intricate relationships between slang, their descriptions, and how they are used in various contexts. The result was a slang generator that not only understood GenZ terms but also could generate them in contextually appropriate and creative ways. This step achieved the final desired outcome for the project.
