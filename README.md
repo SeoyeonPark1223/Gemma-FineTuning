@@ -79,3 +79,4 @@
 
 - **Conclusion:**
     - With this slang generator, you can easily create new and engaging slang terms tailored to various contexts. Feel free to modify the context and conditions to explore different slang outputs!
+    - LinkedIn Post: [LinkedIn Post](https://www.linkedin.com/posts/seoyeon-park-tris1223_mlbtriogenz-slang-generator-hugging-face-activity-7247268688586764288-Vl87?utm_source=share&utm_medium=member_desktop)
